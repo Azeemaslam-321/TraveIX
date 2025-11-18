@@ -352,7 +352,7 @@
       </div>
 
       <div class="text-center">
-        <button class="cta-btn">Search Cabs</button>
+        <button id="searchCabsBtn" class="cta-btn">Search Cabs</button>
       </div>
     </div>
 
@@ -376,6 +376,14 @@
 
     });
   });
+ let tabs1 = document.querySelectorAll('#searchCabsBtn');
+
+tabs1.forEach(btn => {
+  btn.addEventListener('click', () => {
+    window.location.href = "Mock.html"; 
+  });
+});
+
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
