@@ -13,7 +13,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet"/>
 
 <style>
-/* Root Colors */
+    /* Root Colors */
 :root{
   --tx-blue:#0a4ea3;
   --tx-blue-dark:#073d82;
@@ -25,123 +25,150 @@
 body{
   background:var(--bg);
   font-family:"Inter",sans-serif;
-  padding-top:60px;
+  padding-top:70px;   /* space for navbar */
   color:#111;
+  margin:0;
 }
 
-/* NAVBAR BASE */
+/* ==========================
+   NAVBAR FIXED + CENTERED
+========================== */
 .navbar {
-    background: #ffffff;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    padding: 10px 0;
-    z-index: 9999;
+    background:#ffffff;
+    box-shadow:0 2px 8px rgba(0,0,0,0.08);
+    padding:10px 0;
+    z-index:9999;
+    width:100%;
+    position:fixed;
+    top:0;
 }
 
+.navbar .container {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 20px !important;   /* Balanced left-right */
+}
 
 /* BRAND / LOGO TEXT */
 .brand {
-    font-size: 1.9rem;
-    font-weight: 700;
-    color: #073d82;
-    letter-spacing: 0.5px;
-     padding-left: 30px;
-    padding-right: 30px;
+    font-size:1.9rem;
+    font-weight:700;
+    color:var(--tx-blue-dark);
+    letter-spacing:0.4px;
+    margin-left:0;  
 }
 
 /* CALL BUTTON */
 .call-btn {
-    font-weight: 600;
-    color: #0a3d62;
-    font-size: 0.95rem;
-    text-decoration: none;
-    background: #eaf8ff;
-    padding: 6px 14px;
-    border-radius: 20px;
-    border: 1px solid #cfefff;
-    transition: 0.3s;
+    font-weight:600;
+    color:#0a3d62;
+    font-size:0.9rem;
+    text-decoration:none;
+    background:#eaf8ff;
+    padding:6px 12px;
+    border-radius:20px;
+    border:1px solid #cfefff;
+    transition:0.3s;
 }
-
-.call-btn:hover {
-    background: #d8f1ff;
-}
+.call-btn:hover { background:#d8f1ff; }
 
 /* LOGIN BUTTON */
 .login-btn {
-    font-weight: 600;
-    padding: 6px 14px;
-    font-size: 0.95rem;
-    border-radius: 20px;
-     color: #fff !important;
-    background: var(--tx-blue);
-    border: 1px solid #0a4ea3;
-    text-decoration: none;
-    transition: 0.3s;
+    font-weight:600;
+    padding:6px 14px;
+    font-size:0.9rem;
+    border-radius:20px;
+    color:#fff !important;
+    background:var(--tx-blue);
+    border:1px solid var(--tx-blue);
+    text-decoration:none;
+    transition:0.3s;
 }
+.login-btn:hover { background:var(--tx-blue-dark); }
 
-.login-btn:hover {
-      background: var(--tx-blue-dark);
-    }
-
-/* ICON SPACING */
-.call-btn i {
-    font-size: 1rem;
-}
-
-/* MODIFY BUTTON */
-.modify-btn {
-  padding:8px 20px;
-  background:var(--tx-blue);
-  color:#fff;
-  border-radius:8px;
-  font-weight:600;
-  border:none;
-}
-.modify-btn:hover{background:var(--tx-blue-dark)}
-
-/* PAGE */
+/* ======================
+      PAGE CONTAINER
+======================= */
 .page-container{
   max-width:1180px;
   margin:auto;
-  padding:15px;
+  padding:15px 12px;
+}
+.modify-btn {
+    padding: 8px 22px;
+    background: var(--tx-blue);
+    color: #fff;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border: none;
+    cursor: pointer;
+    transition: 0.25s ease;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
 }
 
-/* ROUTE CARD */
+.modify-btn:hover {
+    background: var(--tx-blue-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.20);
+}
+
+.modify-btn:active {
+    transform: scale(0.97);
+}
+
+/* ======================
+       ROUTE CARD
+======================= */
 .route-card{
   background:#fff;
-  padding:20px;
+  padding:18px;
   border-radius:12px;
   box-shadow:0 6px 20px rgba(0,0,0,0.05);
 }
+
 .route-meta{
   display:flex;
   justify-content:space-between;
   flex-wrap:wrap;
-  margin-top:10px;
+  margin-top:12px;
+  gap:15px;
 }
+
 .route-meta div {
   min-width:120px;
 }
-.tiny{font-size:.9rem;color:var(--muted)}
 
-/* INFO BANNER */
+.tiny{
+  font-size:.9rem;
+  color:var(--muted);
+}
+
+/* ======================
+       TOP INFO BAR
+======================= */
 .info-banner {
   background:linear-gradient(90deg,#0066cc,#008cff);
-  padding:18px;
+  padding:14px;
   border-radius:10px;
   color:white;
-  margin-top:20px;
+  margin-top:18px;
 }
 
 .info-item {
   text-align:center;
   padding:5px 0;
 }
+
 .info-item i{
-  font-size:28px;margin-right:8px;
+  font-size:26px;
+  margin-right:8px;
 }
 
-
-/* CAR CARD */
+/* ======================
+        CAR CARD
+======================= */
 .car-card{
   background:#fff;
   border-radius:12px;
@@ -149,44 +176,83 @@ body{
   overflow:hidden;
   box-shadow:0 6px 26px rgba(0,0,0,0.06);
 }
+
 .card-inner{
-  padding:22px;
+  padding:18px;
   display:flex;
-  gap:24px;
+  gap:20px;
   flex-wrap:wrap;
 }
+
+/* IMAGE FIX */
 .car-img img{
-  width:180px;
+  width:150px !important;
   max-width:100%;
-}
-.car-details{flex:1 1 460px}
-.rating-badge{
-  background:#111;color:#fff;
-  padding:3px 10px;border-radius:12px;
-  font-size:.85rem;font-weight:700;
-}
-.car-price{
-  text-align:right;
-  flex:0 0 220px
-}
-.amount{font-size:1.6rem;font-weight:800;color:#008cff}
-.old-price{text-decoration:line-through;color:#777;margin-left:5px}
-.discount{font-weight:700;color:#0aad5a}
-.select-btn{
-  padding:12px 20px;
-  width:100%;border:none;
-  background:var(--accent);
-  color:#fff;border-radius:10px;
-  font-weight:800;margin-top:8px;
+  border-radius:8px;
 }
 
-/* INCLUSION BOX */
+/* DETAILS */
+.car-details{
+  flex:1 1 420px;
+}
+
+/* RATING */
+.rating-badge{
+  background:#111;
+  color:#fff;
+  padding:3px 10px;
+  border-radius:12px;
+  font-size:.85rem;
+  font-weight:700;
+}
+
+/* PRICE BOX */
+.car-price{
+  text-align:right;
+  flex:0 0 200px;
+}
+
+.amount{
+  font-size:1.55rem;
+  font-weight:800;
+  color:#008cff;
+}
+
+.old-price{
+  text-decoration:line-through;
+  color:#777;
+  margin-left:5px;
+}
+
+.discount{
+  font-weight:700;
+  color:#0aad5a;
+}
+
+.select-btn{
+  padding:12px 20px;
+  width:100%;
+  border:none;
+  background:var(--accent);
+  color:#fff;
+  border-radius:10px;
+  font-weight:800;
+  margin-top:8px;
+}
+
+/* ======================
+       INCLUSION BOX
+======================= */
 .inc-link{
-  display:inline-flex;align-items:center;
-  gap:6px;margin-top:10px;
-  color:var(--tx-blue);font-weight:600;
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  margin-top:10px;
+  color:var(--tx-blue);
+  font-weight:600;
   cursor:pointer;
 }
+
 .inc-box{
   background:#fff;
   border:1px solid #e2e2e2;
@@ -195,6 +261,7 @@ body{
   margin-top:12px;
   display:none;
 }
+
 .inc-item{
   display:flex;
   align-items:center;
@@ -202,40 +269,81 @@ body{
   margin:5px 0;
   font-size:1rem;
 }
+
 .inc-yes{color:#16a34a}
 .inc-no{color:#d12b1f}
+
+/* ======================
+       OFFER STRIP
+======================= */
 .offer-strip {
     width: 100%;
-    background: #eef8ff;          /* very light blue */
-    padding: 6px 12px;            /* slim height */
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 0.78rem;
-    font-weight: 600;
-    border-radius: 0 0 8px 8px;    /* slight curve bottom */
-    color: #084c7f;                /* dark readable text */
+    background:#eef8ff;
+    padding:7px 12px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-size:0.75rem;
+    font-weight:600;
+    border-radius:0 0 8px 8px;
+    color:#084c7f;
 }
 
 .offer-strip i {
-    font-size: 16px;
-    color: #0077b6;
+    font-size:16px;
+    color:#0077b6;
 }
 
-
-
+/* ======================
+       ANIMATION
+======================= */
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(5px); }
-    to { opacity: 1; transform: translateY(0); }
+    from { opacity:0; transform:translateY(5px); }
+    to   { opacity:1; transform:translateY(0); }
 }
 
-/* MOBILES */
+/* ======================
+     MOBILE RESPONSIVE
+======================= */
 @media(max-width:768px){
-  .car-price{width:100%;text-align:left}
-  .select-btn{width:100%}
-  .car-img img{width:140px}
-  .card-inner{padding:18px}
+
+  .navbar .container{
+     padding:0 14px !important;
+  }
+
+  .brand{
+    font-size:1.6rem;
+  }
+
+  .call-btn{
+    padding:5px 10px;
+    font-size:0.78rem;
+  }
+
+  .login-btn{
+    font-size:0.78rem;
+    padding:5px 10px;
+  }
+
+  .car-price{
+    width:100%;
+    text-align:left;
+    margin-top:10px;
+  }
+
+  .car-img img{
+    width:130px !important;
+  }
+
+  .card-inner{
+    padding:15px;
+  }
+
+  .info-banner{
+    padding:12px;
+  }
 }
+
 </style>
 </head>
 
